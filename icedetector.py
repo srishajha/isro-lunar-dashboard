@@ -53,7 +53,7 @@ m1, m2, m3, m4 = st.columns(4)
 with m1:
     st.metric("System State", "NOMINAL", delta="DFSAR L-Band Active[cite: 1]")
 with m2:
-    st.metric("Ice Yield Confidence", "82.4%", delta="Target Area Verified")
+    st.metric("Ice Yield Confidence", "82.4%", delta="CPR > 1 & DOP < 0.13 Verified")
 with m3:
     st.metric("Chassis Threshold", "15° Slope Limit[cite: 1]")
 with m4:
@@ -72,7 +72,8 @@ with ctrl_col:
     auto_run = st.button("🚀 RUN OPTIMAL MISSION DEMO (1-CLICK)")
     
     st.markdown("#### Manual Core Tuning")
-    activate_radar_filter = st.toggle("Engage Polarimetric Filter (Strip Rock Noise)[cite: 1]", value=auto_run)
+    # Change your toggle widget text to:
+    activate_radar_filter = st.toggle("Engage Polarimetric Decomposition (Filter CPR/DOP Signatures)", value=auto_run)
     
     # Coordinates brought directly to main panel
     st.markdown("#### Coordinate Vectors")
